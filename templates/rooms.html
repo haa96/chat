@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}{{ chatroom }}{% endblock %}
+<body>
+{% block body %}
+    <h1>{{ chatroom }}</h1><br>
+        <table id="chat" class="chat">
+            <tr>
+                <td style="font-weight: bold;">name(date & time): [message]</td>
+            </tr>
+            <tbody>
+                {% if chat %}
+                    {% for msg in chat %}
+                        <tr class="chatBox">
+                            <td>{{ msg.sentBy }}({{ msg.date }}): {{ msg.message }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        <br>
+
+    <form  method="POST">
+        <input  id="msg" name="post" placeholder="type message here"></input>
+        <button class="del" id="send">Send</button>   
+    </form>
+    <button class='del' onclick="location.href='/exit'" type="button">Exit Room</button>        
+
+<script>
+    var timeoutID;
+    var timeout=1000;
+
+    function post(message){
+    var httpRequest = new XMLHttpRequest();
+    if(!httpRequest){
+        alert('Giving up :( Cannot create an XMLHTTP instance');
+        return false;
+    }
+    httpRequest.open('POST', '/post');
+    httpRequest.setRequestHeader('Content-Type', 'application/json');
+    httpRequest.send(JSON.stringify({msg: message}));  
+}
+            
+function setup(){
+    var httpRequest = new XMLHttpRequest();
+    if(!httpRequest){
+        alert('Giving up :( Cannot create an XMLHTTP instance');
+        return false;
+    }
+    httpRequest.onreadystatechange = function() {
+        handlePoll(httpRequest);
+    };
+    httpRequest.open("GET", "/show_msg");
+}
+
+function handlePoll(httpRequest){
+    if(httpRequest.readyState === XMLHttpRequest.DONE){
+        if(httpRequest.status === 200) {
+            var message = JSON.parse(httpRequest.responseText);
+            var tab = document.getElementById('chat')
+            for(var i = 0; i < message.length; i++){
+                var row = table.insertRow(table.rows.length);
+                var cell = row.insertCell(0).appendChild(document.createTextNode(message[i]));
+                }
+            timeoutID = window.setTimeout(setup, timeout);
+        }
+    }
+}
+    document.getElementById('send').addEventListener('click', function(){
+                var msg = document.getElementById('msg').value;
+                post(msg);
+                document.getElementById('msg').value='';
+            });
+        setTimeout(setup, timeout);   
+</script>
+    {% endblock %}
+    </body>

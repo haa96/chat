@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Register{% endblock %}
+{% block body %}
+  <h2>Register</h2>
+  {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+  <form action="" method="post">
+    <dl>
+      <dt>Username:
+      <dd><input type="text" size="50" name="username"  value="{{ request.form.username }}">
+      <dt>Password:
+      <dd><input type="password" size="50" name="password">
+    </dl>
+    <div class="actions"><input type="submit" value="Register!"></div>
+    <p>Already a member? <a href="/login">Login here</a></p>
+  </form>
+{% endblock %}
+
+
+

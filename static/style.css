@@ -1,0 +1,141 @@
+body{
+background: #1D2B64;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-size: 20px;
+font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
+}
+.join{
+    margin-left: 500px;
+}
+.mt-50{
+	margin-top: 10px;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+div{
+	width: 700px;
+    margin: 30px auto;
+}
+
+div.bg {
+background: #F8CDDA;  
+border: 1px solid #1D2B64;
+width: 900px;
+margin: 20px auto;
+
+}
+
+div.bg h1 {
+background: #1D2B64;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F8CDDA, #1D2B64);
+padding: 4px 10px;
+color: #1D2B64;
+margin: 0;
+}
+div.bg div.nav {
+	
+	background: #F8CDDA;
+    padding: 4px 10px;
+    border-top: 2px solid #1D2B64;
+    border-bottom:  2px solid #1D2B64;
+    color: #6B7291;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+ul.flashes {
+	margin: 14px 5px
+}
+
+
+ul.flashes li {
+    background: #F8CDDA;
+    border: 0.5px solid #1D2B64;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 4px;
+    font-size: 14px;
+}
+div.error {
+    margin: 10px 0;
+    background: #F8CDDA;
+    border: 1px solid #1D2B64;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 4px;
+    font-size: 14px;}
+
+input[type="submit"] {
+    background: #F8CDDA;
+    border: 2px solid #1D2B64;
+    padding: 8px 10px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
+    font-size: 16px;
+    font-weight: bold;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 20px;
+    color: #1D2B64;
+}
+.del{
+
+    background: #F8CDDA;
+    border: 2px solid #1D2B64;
+    padding: 8px 10px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
+    font-size: 16px;
+    font-weight: bold;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 20px;
+    color: #1D2B64;
+}
+
+div.bg h2 {
+    margin: 10 10 15px 0;
+    color: #1D2B64;
+    
+}
+
+div.bg ul.event {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+div.bg div.attending_status {
+    border: 1px solid #1D2B64;
+    background: #F8CDDA;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 3px;
+    font-size: 13px;
+}
+
+.chat{
+    border: solid  #1D2B64;
+    margin: 10 10 15px 0;
+}
+tr .chatBox{
+    border: 1px solid #FFFFFF;
+}
+
+div.bg div.eventbox {
+background: #1D2B64;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F8CDDA, #1D2B64); 
+    margin: 10px 0;
+    padding: 5px;
+ /*   background: #F8CDDA;*/
+    border: 1px solid #1D2B64;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+div.bg div.eventbox a{
+    position: right;
+}

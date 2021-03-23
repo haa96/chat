@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+    {% if rooms %}
+        <h1>Chatrooms:</h1>
+            <form  method="POST">
+                <ul>
+                {% for chat in rooms %}
+                <li style="font-weight: bold">
+                    {{ chat.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class='del' onclick="location.href='rooms/{{ chat.name }}'" type="button">Join!</button>
+
+                    {% if session['id']== chat.host_id %}
+                        <button class='del'>Delete!</button>
+                        <input  type="hidden" value="{{ chat.id }}" name='delBtn'>
+                </li>
+                    {% endif %}     
+                {% endfor %}
+                </ul>
+            </form>
+            {% else %}
+            <h2>No Chatrooms!!</h2>
+    {% endif %}
+{% endblock %}
+
+
